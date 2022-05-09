@@ -1,6 +1,7 @@
 void call(){
   //stage('Build and push image') {
     //steps {
+  println CODE_REPO
   git branch: 'master', url: CODE_REPO, credentialsId: 'github-weecover-miquel'
   script {
       GIT_COMMIT_SHORT = sh(
