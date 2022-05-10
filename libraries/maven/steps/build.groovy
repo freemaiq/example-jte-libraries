@@ -17,7 +17,7 @@ void call(){
       sh "mvn versions:set -DnewVersion=${POM.version}"
       withCredentials([usernamePassword(credentialsId: 'nexus-server', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
       {
-          sh "mvn clean verify -Ddocker.image.repository=${CONTAINER_REGISTRY} -Djib.execution.goal=build -Djib.to.auth.username=${USERNAME} -Djib.to.auth.password=${PASSWORD}"
+          sh "mvn clean verify -Ddocker.image.repository=${config.CONTAINER_REGISTRY} -Djib.execution.goal=build -Djib.to.auth.username=${USERNAME} -Djib.to.auth.password=${PASSWORD}"
       }
   }
     //}
