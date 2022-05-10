@@ -3,6 +3,7 @@ void call(){
         git branch: 'master', url: "${config.DEPLOY_REPO}", credentialsId: 'github-weecover-miquel'
         
         // Changing chart's version and appVersion
+        POM = readMavenPom file: 'pom.xml'
         chart_content = readYaml file: 'int/Chart.yaml'
         sh "echo 'CURRENT CHART VERSION: ${chart_content.version}'"
         sh "echo 'CURRENT APP VERSION: ${chart_content.appVersion}'"
