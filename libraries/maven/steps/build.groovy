@@ -1,7 +1,7 @@
 void call(){
   //stage('Build and push image') {
     //steps {
-  git branch: 'master', url: "${config.CODE_REPO}", credentialsId: 'github-weecover-miquel'
+  git branch: 'master', url: "${config.CODE_REPO}", credentialsId: 'github-weecover'
   script {
       GIT_COMMIT_SHORT = sh(
               script: "printf \$(git rev-parse --short HEAD)",
